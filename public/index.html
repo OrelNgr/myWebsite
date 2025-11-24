@@ -25,8 +25,8 @@
   <button class="snitch" id="snitch" aria-label="Catch the snitch!">
     <span class="right-wing" aria-hidden="true"></span>
   </button>
-  <div class="hint">נסה לתפוס אותי 🪄</div>
 </div>
+
 
 
 <div class="joke-box" id="joke-box">
@@ -68,6 +68,8 @@ function closeJokeBox() {
 }
 </script>
 
+
+
 <script>
   const arena = document.getElementById('arena');
   const snitch = document.getElementById('snitch');
@@ -99,27 +101,23 @@ function closeJokeBox() {
     if (dist < dangerRadius) {
       const { x, y } = randomPosition();
       snitch.classList.add('escape');
-      snitch.style.transform = `translate(${x}px, ${y}px)`;
+      snitch.style.left = `${x}px`;
+      snitch.style.top = `${y}px`;
       clearTimeout(snitch._escapeTimeout);
       snitch._escapeTimeout = setTimeout(() => snitch.classList.remove('escape'), 180);
     }
   }
 
+  // מיקום התחלתי אקראי
   (function init() {
     const { x, y } = randomPosition();
-    snitch.style.transform = `translate(${x}px, ${y}px)`;
+    snitch.style.left = `${x}px`;
+    snitch.style.top = `${y}px`;
   })();
 
-  snitch.addEventListener('mouseenter', escapeFromCursor);
   arena.addEventListener('mousemove', escapeFromCursor);
-
-  snitch.addEventListener('click', () => {
-    snitch.textContent = 'Caught! 🎉';
-    setTimeout(() => {
-      snitch.textContent = '';
-    }, 1200);
-  });
 </script>
+ 
 
 
 
