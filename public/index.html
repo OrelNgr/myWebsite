@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>האתר הראשון שלי</title>
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuI8LnnunNcpKzsl1s02yUmfGrHsG8VC6L8w&s">
+  <!-- קישור ל־CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>ברוך הבא לאתר שלי</h1>
+    <nav>
+      <ul>
+        <li><a href="https://wallpapercat.com/w/full/6/8/e/743660-3840x2160-desktop-4k-house-wallpaper-photo.jpg">בית</a></li>
+        <li><a href="https://hebrew-academy.org.il/%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%95%D7%A2%D7%9C-%D7%90%D7%95%D7%93%D7%95%D7%AA/">אודות</a></li>
+        <li><a href="https://www.btl.gov.il/About/contact_us/Pages/default.aspx">צור קשר</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+<div class="joke-box" id="joke-box">
+  <button onclick="showJoke()">לחץ לבדיחות 😂</button>
+  <p id="joke-text" style="display:none;"></p>
+  <span class="close-btn" onclick="closeJokeBox()"> ❌ </span>
+</div>
+
+<script>
+let currentIndex = Math.floor(Math.random() * 11); // מתחילים מהבדיחה הראשונה
+function showJoke() {
+  const jokes = [
+    "למה הפסנתרן הדתי לא ניגן רה, מי, פה, סול, לה, סי? כי אין עוד מלבד דו 🎹",
+    "מה יקרה למאמן שיפסיד משחק אחר משחק? לא יאמן ⚽",
+    "מה אומרים לעגבניה שבוכה? מטבוחה 🍅",
+	"פעם היו 2 סינים הלכו ברחוב.... היום יש מלא 🏯",
+		"איך מחממים המבורגר? אוכלים נקניקייה ואומרים לו -פחח הרבה יותר טעיםם",
+	"מה מגיע אחרי USB   ?  USA ",
+	"אתמול עלו מחירי הדלק.... אבל לי לא אכפת אני תמיד מתדלק ב100 שקל ",
+		"מה הקשר בין פיל לתפוז? ... שניהם כתומים חוץ מהפיל 🐘",
+	"איך עיוורים יכולים להבדיל בין ענבים לפילים?  הם צריכים לקפוץ עליהם כמה דקות, אם לא יצא יין - סימן שהם קפצו על פילים 🍷",
+	"איזה שתי קבוצות כדורגל רבו מי ישנה יותר הלילה? ... - את(ה)לנתה! - מילאן? 💤",
+	"למה קבב נוסע על למבורגיני? כי הוא בשר טחון 🥩"
+	
+  ];
+  const jokeText = document.getElementById("joke-text");
+  jokeText.textContent = jokes[currentIndex]; // מציג את הבדיחה לפי המיקום
+  jokeText.style.display = "block";
+
+  // מעדכן את המיקום לבדיחה הבאה
+  currentIndex++;
+  if (currentIndex >= jokes.length) {
+    currentIndex = 0; // חוזר להתחלה אם הגענו לסוף
+	}
+}
+
+function closeJokeBox() {
+  document.getElementById("joke-box").style.display = "none";
+}
+</script>
+
+
+
+
+  <main>
+    <section style="margin-bottom: 0px;">
+      <h2 style="text-align: center;">הבלוג הכי חשוב שתקרא בחיים שלך</h2>
+      <p>הבלוג שלי הוא לא עוד
+ <a href="https://he.wikipedia.org/wiki/%D7%90%D7%AA%D7%A8_%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98" target="_blank">אתר אינטרנט</a>
+ – הוא מהפכה מחשבתית, רעידת אדמה אינטלקטואלית, הצונאמי הרוחני שישטוף את כל מה שחשבתם שאתם יודעים על החיים.<br> <br>כל מילה בו היא כמו 
+<a href="https://www.google.com/search?q=gld+stock&sca_esv=6405bf69fd380f07&ei=QjIbad_OApeSi-gPwqLLqQ4&ved=0ahUKEwjf94Dds_mQAxUXyQIHHULRMuUQ4dUDCBE&uact=5&oq=gld+stock&gs_lp=Egxnd3Mtd2l6LXNlcnAiCWdsZCBzdG9jazINEAAYgAQYsQMYQxiKBTIKEAAYgAQYQxiKBTIFEAAYgAQyChAAGIAEGEMYigUyBRAAGIAEMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEjJLFCRIFi9K3ABeAGQAQCYAdkDoAGXDqoBCTAuNi4wLjEuMbgBA8gBAPgBAZgCCaAC2A7CAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICEBAuGIAEGNEDGEMYxwEYigXCAhAQABiABBixAxhDGIMBGIoFwgILEAAYgAQYsQMYgwHCAgsQLhiABBjRAxjHAZgDAIgGAZAGDJIHCTEuNi4wLjEuMaAH-zayBwkwLjYuMC4xLjG4B8wOwgcFMi04LjHIBzA&sclient=gws-wiz-serp" target="_blank">זהב טהור</a>
+ שנכרה מהרי החכמה העתיקים, כל משפט הוא כמו 
+ <a href="https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%A7_%D7%91%D7%9F_%D7%90%D7%91%D7%99%D7%A0%D7%A2%D7%9D" target="_blank">ברק</a>
+ שמכה בלב הקורא ומעיר אותו לעולם חדש. <br><br>זה לא בלוג – זה 
+<a href="https://ph.yhb.org.il/07-04-01/" target="_blank">ספר התורה</a>
+ של המאה ה־21, 
+ <a href="https://www.youtube.com/playlist?list=PLguFsD23tNf70RjeJVMYnuQOS9YvAd9SY" target="_blank">מדריך ההישרדות האולטימטיבי</a>
+, המצפן שיכוון אותך אל האמת היחידה והבלתי ניתנת לערעור.<br><br> מי שיקרא אותו לא יישאר אותו אדם – הוא יקום מהכיסא שלו 
+<a href="https://www.linkedin.com/in/orel-nagar/" target="_blank">אדם</a> 
+חדש, חזק יותר, חכם יותר, מואר יותר. <br><br>
+זהו הבלוג הכי חשוב שתקראו בחיים שלכם, <br>
+נקודה.</p>
+    </section>
+  </main>
+
+<div class="separator"></div>
+
+<section class="blog-gallery" style="margin-top: 20px;">
+  <div class="blog-item">
+    <img src="https://media.istockphoto.com/id/1453953461/photo/strategy-of-successful-investing.jpg?s=612x612&w=0&k=20&c=rK2InTTOiWCFjTcCuZqmeicJT3xlhdY7btNYCj5x9J0=" alt="בלוג 1">
+    <h3><a href="https://yeda-kesef.co.il/%D7%9E%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%A8%D7%99%D7%91%D7%99%D7%AA-%D7%93%D7%A8%D7%99%D7%91%D7%99%D7%AA/">מחשבון ריבית דריבית: <br>חישוב תשואה בריבית דריבית ומה זה ריבית דריבית?</a></h3>
+  </div>
+
+  <div class="blog-item">
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240319155102/what-is-ai-artificial-intelligence.webp" alt="בלוג 2">
+    <h3><a href="https://www.youtube.com/watch?v=ad79nYk2keg">מה זה AI: <br> ואיך להשתמש בו!</a></h3>
+  </div>
+
+  <div class="blog-item">
+    <img src="https://ali-buy.com/wp-content/uploads/45-20-1536x1008.jpg" alt="בלוג 3">
+    <h3><a href="https://ali-buy.com/aliexpress-coupons/?srsltid=AfmBOop2hCsQHJ0waKhVGf8cxQNHSHU6UJJ8Rd0kK_wJBkwmLqnRUmgu">הגיע הזמן לחסוך כסף: <br> קופונים לאליאקספרס</a></h3>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<p class="game-box">
+  <strong>משחק ניחוש מספר 🎲</strong><br>
+  נחש מספר בין 1 ל־10:<br>
+  <input type="number" id="guess" min="1" max="10">
+  <button id="guess-btn">נחש!</button>
+  <span id="result"></span>
+</p>
+
+<script>
+document.getElementById("guess-btn").addEventListener("click", function() {
+  const randomNumber = Math.floor(Math.random() * 10) + 1;
+  const userGuess = document.getElementById("guess").value;
+  const result = document.getElementById("result");
+
+  if (parseInt(userGuess) === randomNumber) {
+    result.textContent = "כל הכבוד! צדקת 🎉";
+    result.style.color = "green";
+  } else {
+    result.textContent = "לא נכון... אתה חייב להשתדל יותר! המספר היה " + randomNumber;
+    result.style.color = "red";
+  }
+});
+</script>
+
+<div class="after-game">
+  <h3 class="after-text">
+    צדקת? כנראה הגיע הזמן שלך לחשוב על שינוי קריירה
+  </h3>
+  <img src="https://cdn1.iconfinder.com/data/icons/basic-17/80/75_BO_arrow_down-512.png" alt="תמונת חץ">
+   <br>
+  <a href="https://games.yo-yoo.co.il/games_play.php?game=1046" class="nice-link">הליגה של הגדולים</a>
+</div>
+
+
+  <footer>
+    <h6>© 2025 האתר שלי</h6>
+  </footer>
+</body>
+</html>

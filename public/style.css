@@ -1,0 +1,227 @@
+/* עיצוב כללי */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  direction: rtl; /* כדי שהטקסט יהיה מימין לשמאל */
+}
+
+/* כותרת עליונה */
+header {
+  text-shadow: 2px 2px 4px black; /* צל שחור מאחורי האותיות */
+  background-image: 
+		linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%),
+		url("https://travelcrafters.com.au/wp-content/uploads/2024/09/872773.jpg"); /* הנתיב לתמונה שלך */
+  background-size: cover;   /* שהתמונה תכסה את כל שטח ה־header */
+  background-position: center; /* שהתמונה תהיה ממורכזת */
+  color: white;
+  padding: 40px;
+height: 130px; /* גובה הבאנר */
+  margin: 0 auto;           /* ממקם אותה באמצע המסך */
+}
+
+
+/* תפריט ניווט */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 15px;
+}
+
+nav ul li a {
+ text-shadow: 2px 2px 40px black; /* צל שחור מאחורי האותיות */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+   font-size: 20px;
+}
+
+nav ul li :hover {
+  color: #FF5733;              /* צבע כחול במעבר עכבר */
+  text-decoration: underline; /* קו תחתון כמו קישור קלאסי */
+}
+
+/* תוכן ראשי */
+main {
+  padding: 20px;
+}
+
+/* כותרת תחתונה */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* פסקאות */
+p {
+  max-width: 600px;        /* מגביל את רוחב הפסקה כדי שלא תתפרש עד הקצה */
+  margin: 40px auto;       /* מרווח גדול מלמעלה/למטה ומרכז אופקי */
+  padding: 20px;           /* ריווח פנימי בתוך המסגרת */
+  text-align: center;      /* טקסט ממורכז */
+  
+  /* מסגרת יפה */
+  border: 2px solid #4CAF50;   /* צבע ירוק למסגרת */
+  border-radius: 20px;         /* פינות עגולות */
+  background-color: #f9f9f9;   /* רקע בהיר בתוך המסגרת */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* הצללה עדינה */
+}
+
+.blog-gallery {
+  display: flex;              /* מציב את הפריטים בשורה */
+  justify-content: center;    /* ממקם אותם באמצע */
+  gap: 30px;                  /* רווח בין התמונות */
+  margin: 40px 0;             /* רווח מלמעלה ולמטה */
+}
+
+.blog-item {
+  text-align: center;         /* ממקם את הכותרת מתחת לתמונה באמצע */
+  max-width: 250px;           /* מגביל את רוחב כל פריט */
+}
+
+.blog-item img {
+  width: 100%;                /* שהתמונה תתאים לגודל הקונטיינר */
+  border-radius: 10px;        /* פינות עגולות לתמונה */
+  width: 250px;              /* רוחב אחיד */
+  height: 180px;             /* גובה אחיד */
+  object-fit: cover;         /* חותך/מתאים את התמונה בלי לעוות */
+  border-radius: 10px;       /* פינות עגולות */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* הצללה עדינה */
+
+}
+
+.blog-item h3 a {
+  color: #4CAF50;             /* צבע ירוק לקישור */
+  text-decoration: none;      /* בלי קו תחתון */
+}
+
+.blog-item h3 a:hover {
+  color: blue;                /* במעבר עכבר – כחול */
+  text-decoration: underline; /* קו תחתון */
+}
+
+
+.game-box {
+  display: block;
+  text-align: center;
+  background-color: #fff3cd;   /* צבע רקע צהוב עדין */
+  padding: 20px;
+  border: 2px solid #ffeeba;   /* מסגרת בהירה */
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+.game-box input {
+  padding: 6px;
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.game-box button {
+  padding: 6px 12px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.game-box button:hover {
+  background-color: #0056b3;
+}
+
+.game-box #result {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.after-game {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 500px;
+}
+
+.after-game img {
+margin: 0 auto;
+  width: 20%;
+}
+
+.after-text {
+  margin-top: 0px;
+    margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nice-link {
+  display: inline-block;
+  margin-top: 0px;
+  padding: 12px 24px;
+  background-color: #FF0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nice-link:hover {
+  background-color: #8B0000 ;
+}
+
+.separator {
+  text-align: center;
+  margin: 0px auto;
+}
+
+.separator::before {
+  content: "  •  •  •  🔽  •  •  •  ";
+  font-size: 24px;
+  color: #999;
+}
+
+.joke-box {
+  position: fixed;   /* תמיד נשאר על המסך */
+  bottom: 20px;      /* מרחק מהתחתית */
+  right: 20px;       /* מרחק מהצד */
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.joke-box button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.joke-box button:hover {
+  background-color: #45a049;
+}
+
+#joke-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+
