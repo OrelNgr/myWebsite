@@ -225,3 +225,98 @@ margin: 0 auto;
 }
 
 
+/* אזור המשחק שבו הכפתור יכול לזוז */
+.arena {
+  position: relative;
+  width: min(90vw, 700px);
+  height: min(70vh, 500px);
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* הכפתור – כדור זהוב */
+.snitch {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd45c 0%, #ffc533 35%, #d9a41a 60%, #b88512 100%);
+  box-shadow: 0 0 18px rgba(255, 215, 80, 0.7),
+              inset -8px -10px 18px rgba(0,0,0,0.25);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: transform 0.12s ease-out, box-shadow 0.2s ease;
+}
+
+/* ברק קטן על הכדור */
+.snitch::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  top: 18%;
+  width: 18px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  filter: blur(1px);
+  transform: rotate(-20deg);
+}
+
+/* כנף שמאל */
+.snitch::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 10px;
+  width: 40px;
+  height: 20px;
+  background: radial-gradient(circle at 100% 50%, rgba(255,255,255,0.9) 0 8px, transparent 8px),
+              linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.1));
+  border-radius: 12px;
+  box-shadow: 30px 0 0 0 rgba(255,255,255,0.75);
+  transform-origin: right center;
+  animation: flap 0.5s infinite ease-in-out;
+}
+
+/* כנף ימין */
+.snitch .right-wing {
+  position: absolute;
+  right: -42px;
+  top: 10px;
+  width: 40px;
+  height: 20px;
+  background: radial-gradient(circle at 0% 50%, rgba(255,255,255,0.9) 0 8px, transparent 8px),
+              linear-gradient(270deg, rgba(255,255,255,0.7), rgba(255,255,255,0.1));
+  border-radius: 12px;
+  box-shadow: -30px 0 0 0 rgba(255,255,255,0.75);
+  transform-origin: left center;
+  animation: flap 0.5s infinite ease-in-out;
+}
+
+/* אנימציית נפנוף כנפיים */
+@keyframes flap {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(-2px); }
+}
+
+/* אפקט בריחה */
+.snitch.escape {
+  box-shadow: 0 0 28px rgba(255, 225, 100, 0.9),
+              inset -8px -10px 18px rgba(0,0,0,0.25);
+}
+
+/* טקסט קטן מתחת */
+.hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  opacity: 0.7;
+}
+

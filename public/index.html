@@ -21,6 +21,14 @@
   </header>
 
   
+<div class="arena" id="arena">
+  <button class="snitch" id="snitch" aria-label="Catch the snitch!">
+    <span class="right-wing" aria-hidden="true"></span>
+  </button>
+  <div class="hint">נסה לתפוס אותי 🪄</div>
+</div>
+
+
 <div class="joke-box" id="joke-box">
   <button onclick="showJoke()">לחץ לבדיחות 😂</button>
   <p id="joke-text" style="display:none;"></p>
@@ -59,6 +67,60 @@ function closeJokeBox() {
   document.getElementById("joke-box").style.display = "none";
 }
 </script>
+
+<script>
+  const arena = document.getElementById('arena');
+  const snitch = document.getElementById('snitch');
+
+  function randomPosition() {
+    const padding = 20;
+    const rect = arena.getBoundingClientRect();
+    const size = snitch.getBoundingClientRect();
+    const maxX = rect.width - size.width - padding;
+    const maxY = rect.height - size.height - padding;
+    const x = padding + Math.random() * maxX;
+    const y = padding + Math.random() * maxY;
+    return { x, y };
+  }
+
+  function escapeFromCursor(e) {
+    const snRect = snitch.getBoundingClientRect();
+    const arenaRect = arena.getBoundingClientRect();
+    const cursorX = e.clientX - arenaRect.left;
+    const cursorY = e.clientY - arenaRect.top;
+
+    const snCenterX = snRect.left - arenaRect.left + snRect.width / 2;
+    const snCenterY = snRect.top - arenaRect.top + snRect.height / 2;
+    const dx = cursorX - snCenterX;
+    const dy = cursorY - snCenterY;
+    const dist = Math.hypot(dx, dy);
+
+    const dangerRadius = 100;
+    if (dist < dangerRadius) {
+      const { x, y } = randomPosition();
+      snitch.classList.add('escape');
+      snitch.style.transform = `translate(${x}px, ${y}px)`;
+      clearTimeout(snitch._escapeTimeout);
+      snitch._escapeTimeout = setTimeout(() => snitch.classList.remove('escape'), 180);
+    }
+  }
+
+  (function init() {
+    const { x, y } = randomPosition();
+    snitch.style.transform = `translate(${x}px, ${y}px)`;
+  })();
+
+  snitch.addEventListener('mouseenter', escapeFromCursor);
+  arena.addEventListener('mousemove', escapeFromCursor);
+
+  snitch.addEventListener('click', () => {
+    snitch.textContent = 'Caught! 🎉';
+    setTimeout(() => {
+      snitch.textContent = '';
+    }, 1200);
+  });
+</script>
+
 
 
 
